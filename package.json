@@ -1,0 +1,20 @@
+{
+  "name": "ptah-chamber",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "chokidar": "^4.0.3",
+    "cssnano": "^7.0.6",
+    "postcss": "^8.5.3",
+    "postcss-import": "^16.1.0",
+    "vite": "^6.2.0",
+    "vite-plugin-static-copy": "^2.3.0"
+  }
+}

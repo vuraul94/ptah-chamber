@@ -1,0 +1,326 @@
+.age-approve {
+    height: 95vh;
+    max-width: 100vw;
+    --color-animation-time: 0.5s;
+    --movement-animation-time: 0.2s;
+    --out-animation-time: 1s;
+    align-items: space-between;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 3rem;
+    padding-bottom: 0;
+
+    @media (min-width: 768px) {
+        padding: 2rem 1rem;
+        padding-bottom: 0;
+    }
+
+    .age-approve__header {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    .age-approve__body {
+        .age-approve__title {
+            font-size: 3rem;
+            font-weight: 400;
+            line-height: 1;
+            text-align: center;
+
+            @media (min-width: 768px) {
+                font-size: 5rem;
+            }
+
+            .sub-title {
+                font-size: 1.5rem;
+            }
+
+
+        }
+
+        .age-approve__buttons {
+            display: flex;
+            flex-direction: row;
+            column-gap: 6vw;
+            justify-content: center;
+            padding-top: 2rem;
+
+            .age-approve__button {
+                display: flex;
+                flex-direction: column;
+                row-gap: 2.5px;
+                position: relative;
+
+                svg {
+                    &.bottle {
+                        height: 32vh;
+
+                        @media (min-width: 768px) {
+                            height: 50vh;
+                        }
+
+                        .bottle-color {
+                            fill: #525252;
+                            transition: var(--color-animation-time) ease-in-out;
+                        }
+
+                        .bottle-secondary-color {
+                            fill: #2A2A2A;
+                            transition: var(--color-animation-time) ease-in-out;
+                        }
+                    }
+
+                    &.cap {
+                        &.cap--yes {
+                            height: 1.3vh;
+                            transition: var(--color-animation-time) ease-in-out;
+                        }
+
+                        &.cap--no {
+                            height: 2vh;
+                            transition: var(--color-animation-time) ease-in-out;
+                        }
+
+                        .cap-path {
+                            fill: #525252;
+                        }
+                    }
+                }
+
+                .age-approve__btn-text {
+                    position: absolute;
+                    top: 65%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 3.25vh;
+                    color: #F5D60B;
+                    font-weight: bold;
+                    font-family: 'Avantt', serif;
+
+                    @media(min-width: 768px) {
+                        font-size: 5vh;
+                    }
+                }
+
+                /* &.age-approve__button--yes {
+                    transition: var(--movement-animation-time) ease-in-out;
+                } */
+
+            }
+        }
+
+    }
+
+    .age-approve__footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .age-approve__text {
+            width: 90%;
+            font-size: 1rem;
+
+            @media (min-width: 768px) {
+                width: 34%;
+                font-size: 0.75rem;
+            }
+        }
+
+    }
+
+    &:not(.open) {
+        overflow: hidden;
+
+        .age-approve__text--ap {
+            display: none;
+        }
+
+        .age-approve__body {
+
+            .age-approve__title--ap {
+                display: none;
+            }
+
+            .age-approve__title--rej {
+                display: none;
+            }
+
+            .age-approve__buttons {
+
+                .age-approve__button {
+                    cursor: pointer;
+
+                    &:hover {
+                        svg {
+                            &.bottle {
+                                .bottle-color {
+                                    fill: #F5D60B;
+                                }
+
+                                .bottle-secondary-color {
+                                    fill: #D99500;
+                                }
+                            }
+
+                            &.cap {
+                                .cap-path {
+                                    fill: #F5D60B;
+                                }
+                            }
+                        }
+
+                        .age-approve__btn-text {
+                            color: #222222;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.open {
+        .age-approve__text--pre {
+            display: none;
+        }
+
+        .age-approve__text--ap {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            gap: 4vw;
+
+            a {
+                text-decoration: none;
+                cursor: pointer;
+                padding: 0.25rem 1.3rem;
+            }
+
+            .contacto-link {
+                color: #F9F9F9;
+            }
+
+            .reglamento-link {
+                color: #000000;
+                background-color: #F5D60B;
+                border-radius: 2px;
+            }
+        }
+
+        .age-approve__body {
+
+            .age-approve__title--pre {
+                display: none;
+            }
+
+            .age-approve__title--rej {
+                display: none;
+            }
+
+            .age-approve__buttons {
+
+                .age-approve__button {
+
+                    transition: var(--movement-animation-time) ease-in-out;
+
+                    .age-approve__btn-text {
+                        display: none;
+                    }
+
+                    &.age-approve__button--yes {
+                        transition: var(--movement-animation-time) ease-in-out;
+
+                        svg {
+                            &.bottle {
+                                transition: var(--movement-animation-time) ease-in-out;
+                                transform: rotate(15deg);
+
+                                .bottle-color {
+                                    fill: #F5D60B;
+                                }
+
+                                .bottle-secondary-color {
+                                    fill: #D99500;
+                                }
+                            }
+
+                            &.cap {
+                                transform: rotate(-15deg) translateX(30%);
+
+                                .cap-path {
+                                    fill: #F5D60B;
+                                }
+                            }
+                        }
+                    }
+
+                    &.age-approve__button--no {
+                        svg {
+                            &.bottle {
+                                transform: rotate(-15deg);
+                            }
+
+                            &.cap {
+                                transform: rotate(15deg) translateX(-30%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .age-approve__footer {
+            .age-approve__text {
+                font-size: 1.875rem;
+            }
+        }
+    }
+
+    &.rejected {
+        .age-approve__body {
+
+            .age-approve__title--pre {
+                display: none;
+            }
+
+            .age-approve__title--rej {
+                display: flex;
+                justify-content: center;
+                transition-delay: 1s trasform;
+                transition: var(--movement-animation-time) ease-in-out;
+                transform: translateY(200%);
+            }
+
+            .age-approve__buttons {
+                .age-approve__button {
+                    &.age-approve__button--yes {
+                        transform: translateX(-150vw);
+                        transition: var(--out-animation-time) ease-in-out;
+                    }
+
+                    &.age-approve__button--no {
+                        transform: translateX(150vw);
+                        transition: var(--out-animation-time) ease-in-out;
+                    }
+                }
+            }
+        }
+
+        .age-approve__footer {
+            .age-approve__text {
+                width: 90%;
+                font-size: 1.5rem;
+                transition: 1s ease-in-out;
+
+            }
+        }
+    }
+}

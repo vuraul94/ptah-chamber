@@ -1,0 +1,119 @@
+/* Contenedor principal */
+.animated-carousel-container {
+  display: flex;
+  flex-direction: column;
+  /* Organiza el carrusel y la paginación en columna */
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Carrusel */
+.animated-carousel {
+  border-radius: 2%;
+  width: 95%;
+  height: 80%;
+
+  .swiper-wrapper {
+    align-items: center;
+  }
+}
+
+.animated-carousel .swiper-slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2%;
+  padding: 0;
+}
+
+.animated-carousel .swiper-slide .animated-item {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+
+
+
+/* Paginación - Ahora está fuera del carrusel */
+.animated-carousel-container .pagination-container {
+  height: 4vw;
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* Botones de navegación */
+.animated-carousel-container .swiper-button-prev,
+.animated-carousel-container .swiper-button-next {
+  color: #ce1141;
+  width: 3%;
+  height: 3%;
+}
+
+
+
+.animated-carousel-container .swiper-pagination {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.animated-carousel-container .swiper-pagination-bullet {
+  opacity: 1;
+  width: 1.5vw;
+  height: 1.5vw;
+  background-color: transparent;
+  border: 2px #ce1141 solid;
+}
+
+.animated-carousel-container .swiper-pagination-bullet-active {
+  opacity: 1;
+  width: 1.5vw;
+  height: 1.5vw;
+  background-color: #ce1141;
+  border: 2px #ce1141 solid;
+}
+
+@media (max-width: 768px) {
+
+  .animated-carousel {
+    border-radius: 2%;
+    height: 80%;
+  }
+
+  .animated-carousel .swiper-slide {}
+
+  .animated-carousel-container .swiper-button-prev {
+    left: -1%;
+  }
+
+  .animated-carousel-container .swiper-button-next {
+    right: -1%;
+  }
+
+
+  .animated-carousel-container .swiper-pagination-bullet {
+
+    width: 3vw;
+    height: 3vw;
+
+  }
+
+  .animated-carousel-container .swiper-pagination-bullet-active {
+
+    width: 3vw;
+    height: 3vw;
+
+  }
+
+
+}
