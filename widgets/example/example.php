@@ -38,12 +38,12 @@ add_action('elementor/init', function () {
 
         public function get_script_depends()
         {
-            return ['swiper-script', 'example-script'];
+            return ['example-script'];
         }
 
         public function get_style_depends()
         {
-            return ['swiper-styles', 'example-styles'];
+            return ['example-styles'];
         }
 
         protected function _register_controls()
@@ -84,6 +84,6 @@ add_action('elementor/init', function () {
     }
 
     add_action('elementor/widgets/widgets_registered', function () {
-        \Elementor\Plugin::instance()->widgets_manager->register(new WC_Carousel_Widget());
+        \Elementor\Plugin::instance()->widgets_manager->register(new Example_Widget());
     });
 });
