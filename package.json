@@ -6,13 +6,16 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "create-widget": "node create-widget.js"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "chokidar": "^4.0.3",
     "cssnano": "^7.0.6",
+    "fs-extra": "^11.3.0",
     "glob": "^11.0.3",
+    "inquirer": "^12.7.0",
     "postcss": "^8.5.3",
     "postcss-import": "^16.1.0",
     "vite": "^6.2.0",

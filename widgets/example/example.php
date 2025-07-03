@@ -74,12 +74,17 @@ add_action('elementor/init', function () {
         {
             $settings = $this->get_settings_for_display();
             $example_text = $settings['example_text'];
-          
-?>
-                <p class="example" >
-                    <?php echo esc_html($example_text); ?> 
-                </p>
-<?php
+
+            $theme_template = 'templates/ptah-chamber/example/view.php';
+
+            $located_template = locate_template($theme_template);
+
+            if ($located_template) {
+
+                include($located_template);
+            } else {
+                include(__DIR__ . '/templates/view.php');
+            }
         }
     }
 
